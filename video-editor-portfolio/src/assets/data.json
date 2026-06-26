@@ -1,0 +1,83 @@
+{
+  "navbar": {
+    "logo": "LOGO",
+    "links": [
+      {
+        "label": "Home",
+        "href": "#home"
+      },
+      {
+        "label": "Services",
+        "href": "#services"
+      },
+      {
+        "label": "About me",
+        "href": "#about"
+      },
+      {
+        "label": "Portfolio",
+        "href": "#portfolio"
+      },
+      {
+        "label": "Contact me",
+        "href": "#contact"
+      }
+    ]
+  },
+  "hero": {
+    "eyebrow": "Hello, I am",
+    "name": "Christian Bergmann",
+    "title": "Video Editor",
+    "socials": [
+      {
+        "label": "Instagram",
+        "href": "https://instagram.com",
+        "icon": "instagram"
+      },
+      {
+        "label": "LinkedIn",
+        "href": "https://linkedin.com",
+        "icon": "linkedin"
+      },
+      {
+        "label": "UpWork",
+        "href": "https://dribbble.com",
+        "icon": "dribbble"
+      }
+    ],
+    "actions": [
+      {
+        "label": "Hire Me",
+        "href": "#contact",
+        "variant": "primary"
+      },
+      {
+        "label": "Download CV",
+        "href": "/cv.pdf",
+        "variant": "secondary"
+      }
+    ],
+    "stats": [
+      {
+        "value": "5+",
+        "label": "Experiences"
+      },
+      {
+        "value": "20+",
+        "label": "Project done"
+      },
+      {
+        "value": "80+",
+        "label": "Happy Clients"
+      }
+    ],
+    "image": {
+      "src": "/images/hero.png",
+      "alt": "Portfolio hero portrait"
+    }
+  },
+  "servicesIntro": {
+    "title": "Services",
+    "description": "Lorem ipsum dolor sit amet consectetur. Imperdiet convallis blandit felis ligula aliquam"
+  }
+}
