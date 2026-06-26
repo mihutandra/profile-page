@@ -26,22 +26,22 @@
   },
   "hero": {
     "eyebrow": "Hello, I am",
-    "name": "Christian Bergmann",
+    "name": "Your Name",
     "title": "Video Editor",
     "socials": [
       {
         "label": "Instagram",
-        "href": "https://instagram.com",
+        "href": "https://instagram.com/your-profile",
         "icon": "instagram"
       },
       {
         "label": "LinkedIn",
-        "href": "https://linkedin.com",
+        "href": "https://linkedin.com/in/your-profile",
         "icon": "linkedin"
       },
       {
-        "label": "UpWork",
-        "href": "https://dribbble.com",
+        "label": "Portfolio",
+        "href": "https://example.com",
         "icon": "dribbble"
       }
     ],
@@ -60,11 +60,11 @@
     "stats": [
       {
         "value": "5+",
-        "label": "Experiences"
+        "label": "Years Experience"
       },
       {
         "value": "20+",
-        "label": "Project done"
+        "label": "Projects Done"
       },
       {
         "value": "80+",
@@ -78,6 +78,6 @@
   },
   "servicesIntro": {
     "title": "Services",
-    "description": "Lorem ipsum dolor sit amet consectetur. Imperdiet convallis blandit felis ligula aliquam"
+    "description": "Add a short description of your editing, motion, color, and content services here."
   }
 }

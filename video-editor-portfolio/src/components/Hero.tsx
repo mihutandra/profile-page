@@ -15,6 +15,7 @@ type HeroProps = {
       alt: string;
     };
   };
+  theme: "light" | "dark";
 };
 
 const socialLabels: Record<SocialLink["icon"], string> = {
@@ -24,17 +25,36 @@ const socialLabels: Record<SocialLink["icon"], string> = {
   behance: "Be",
 };
 
-export const Hero = ({ data }: HeroProps) => {
+export const Hero = ({ data, theme }: HeroProps) => {
+  const isLight = theme === "light";
+  const balatroColors = isLight
+    ? {
+        color1: "#f8fbff",
+        color2: "#0d86d6",
+        color3: "#eef6ff",
+        opacity: "opacity-90",
+        overlay: "bg-[#f7f4ef]/35",
+      }
+    : {
+        color1: "#00101a",
+        color2: "#0d86d6",
+        color3: "#021f33",
+        opacity: "opacity-55",
+        overlay: "bg-[#111111]/60",
+      };
+
   return (
     <section
       id="home"
       className="relative isolate grid w-full items-center gap-12 overflow-hidden px-6 pb-12 pt-10 sm:px-10 md:grid-cols-[0.92fr_1.08fr] lg:min-h-[620px] lg:px-16 lg:pb-16 lg:pt-8 xl:px-20"
     >
-      <div className="pointer-events-none absolute inset-0 -z-20 opacity-35 dark:opacity-55">
+      <div
+        className={`pointer-events-none absolute inset-0 -z-20 ${balatroColors.opacity}`}
+      >
         <Balatro
-          color1="#00101a"
-          color2="#0d86d6"
-          color3="#021f33"
+          color1={balatroColors.color1}
+          color2={balatroColors.color2}
+          color3={balatroColors.color3}
           contrast={3.6}
           lighting={0.35}
           spinSpeed={4.5}
@@ -44,7 +64,9 @@ export const Hero = ({ data }: HeroProps) => {
           mouseInteraction={false}
         />
       </div>
-      <div className="pointer-events-none absolute inset-0 -z-10 bg-[#f7f4ef]/75 dark:bg-[#111111]/60" />
+      <div
+        className={`pointer-events-none absolute inset-0 -z-10 ${balatroColors.overlay}`}
+      />
 
       <motion.div
         initial={{ opacity: 0, y: 18 }}
@@ -103,9 +125,7 @@ export const Hero = ({ data }: HeroProps) => {
                 index > 0 ? "border-l border-zinc-300 dark:border-zinc-700" : ""
               }`}
             >
-              <p className="text-lg font-extrabold text-accent">
-                {stat.value}
-              </p>
+              <p className="text-lg font-extrabold text-accent">{stat.value}</p>
               <p className="mt-1 whitespace-nowrap text-xs font-semibold text-zinc-600 dark:text-zinc-300 sm:text-sm">
                 {stat.label}
               </p>

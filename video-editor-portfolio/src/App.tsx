@@ -68,7 +68,7 @@ function App() {
             )
           }
         />
-        <Hero data={data.hero} />
+        <Hero data={data.hero} theme={theme} />
         <section
           id="services"
           className="mx-auto max-w-3xl px-6 pb-12 pt-8 text-center sm:pt-14 lg:pb-16"
