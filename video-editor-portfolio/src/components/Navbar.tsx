@@ -14,7 +14,7 @@ export const Navbar = ({ data, theme, onThemeToggle }: NavbarProps) => {
   const isDark = theme === "dark";
 
   return (
-    <header className="relative z-20 mx-auto flex max-w-6xl items-center justify-between px-6 py-8 sm:px-10 lg:px-12">
+    <header className="relative z-20 flex w-full items-center justify-between px-6 py-8 sm:px-10 lg:px-16 xl:px-20">
       <a
         href="#home"
         className="text-lg font-extrabold uppercase tracking-normal text-accent"
