@@ -41,7 +41,7 @@ export const Hero = ({ data }: HeroProps) => {
           <span className="text-zinc-600 dark:text-zinc-400">{data.name}</span>
         </p>
 
-        <h1 className="mt-5 text-5xl font-extrabold leading-none tracking-normal text-accent sm:text-6xl lg:text-7xl">
+        <h1 className="mt-5 text-5xl font-extrabold leading-none tracking-normal text-orange-600 sm:text-6xl lg:text-7xl">
           {data.title}
         </h1>
 
@@ -52,7 +52,7 @@ export const Hero = ({ data }: HeroProps) => {
                 key={social.label}
                 href={social.href}
                 aria-label={social.label}
-                className="grid h-7 w-7 place-items-center rounded-full border border-zinc-300 bg-zinc-100 text-zinc-500 transition-colors duration-200 hover:border-accent hover:text-accent dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-400"
+                className="grid h-7 w-7 place-items-center rounded-full border border-zinc-300 bg-zinc-100 text-zinc-500 transition-colors duration-200 hover:border-orange-600 hover:text-orange-600 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-400"
               >
                 <span className="text-xs font-bold leading-none">
                   {socialLabels[social.icon]}
@@ -69,8 +69,8 @@ export const Hero = ({ data }: HeroProps) => {
               href={action.href}
               className={
                 action.variant === "primary"
-                  ? "rounded-md bg-accent px-8 py-3 text-sm font-semibold text-white transition-colors duration-200 hover:bg-accent-hover"
-                  : "rounded-md border border-zinc-400 px-8 py-3 text-sm font-semibold text-zinc-600 transition-colors duration-200 hover:border-accent hover:text-accent dark:border-zinc-600 dark:text-zinc-300"
+                  ? "rounded-md bg-orange-600 px-8 py-3 text-sm font-semibold text-white transition-colors duration-200 hover:bg-orange-700"
+                  : "rounded-md border border-zinc-400 px-8 py-3 text-sm font-semibold text-zinc-600 transition-colors duration-200 hover:border-orange-600 hover:text-orange-600 dark:border-zinc-600 dark:text-zinc-300"
               }
             >
               {action.label}
@@ -86,7 +86,7 @@ export const Hero = ({ data }: HeroProps) => {
                 index > 0 ? "border-l border-zinc-300 dark:border-zinc-700" : ""
               }`}
             >
-              <p className="text-lg font-extrabold text-accent">
+              <p className="text-lg font-extrabold text-orange-600">
                 {stat.value}
               </p>
               <p className="mt-1 whitespace-nowrap text-xs font-semibold text-zinc-600 dark:text-zinc-300 sm:text-sm">
