@@ -57,8 +57,8 @@ function App() {
   }, [theme]);
 
   return (
-    <main className="min-h-screen bg-zinc-100 px-4 py-3 text-zinc-950 transition-colors duration-300 dark:bg-zinc-950 dark:text-white sm:px-6 lg:px-8">
-      <div className="mx-auto min-h-[calc(100vh-1.5rem)] max-w-7xl overflow-hidden bg-[#f7f4ef] transition-colors duration-300 dark:bg-[#111111]">
+    <main className="min-h-screen bg-[#f7f4ef] text-zinc-950 transition-colors duration-300 dark:bg-[#111111] dark:text-white">
+      <div className="min-h-screen w-full overflow-hidden">
         <Navbar
           data={data.navbar}
           theme={theme}

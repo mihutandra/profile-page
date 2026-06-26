@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import Balatro from "./Balatro";
 import type { HeroAction, HeroStat, SocialLink } from "../App";
 
 type HeroProps = {
@@ -27,8 +28,24 @@ export const Hero = ({ data }: HeroProps) => {
   return (
     <section
       id="home"
-      className="mx-auto grid max-w-6xl items-center gap-12 px-6 pb-12 pt-10 sm:px-10 md:grid-cols-[0.92fr_1.08fr] lg:min-h-[520px] lg:px-12 lg:pb-16 lg:pt-8"
+      className="relative isolate grid w-full items-center gap-12 overflow-hidden px-6 pb-12 pt-10 sm:px-10 md:grid-cols-[0.92fr_1.08fr] lg:min-h-[620px] lg:px-16 lg:pb-16 lg:pt-8 xl:px-20"
     >
+      <div className="pointer-events-none absolute inset-0 -z-20 opacity-35 dark:opacity-55">
+        <Balatro
+          color1="#00101a"
+          color2="#0d86d6"
+          color3="#021f33"
+          contrast={3.6}
+          lighting={0.35}
+          spinSpeed={4.5}
+          spinAmount={0.22}
+          pixelFilter={745}
+          isRotate
+          mouseInteraction={false}
+        />
+      </div>
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-[#f7f4ef]/75 dark:bg-[#111111]/60" />
+
       <motion.div
         initial={{ opacity: 0, y: 18 }}
         animate={{ opacity: 1, y: 0 }}
@@ -41,7 +58,7 @@ export const Hero = ({ data }: HeroProps) => {
           <span className="text-zinc-600 dark:text-zinc-400">{data.name}</span>
         </p>
 
-        <h1 className="mt-5 text-5xl font-extrabold leading-none tracking-normal text-orange-600 sm:text-6xl lg:text-7xl">
+        <h1 className="mt-5 text-5xl font-extrabold leading-none tracking-normal text-accent sm:text-6xl lg:text-7xl">
           {data.title}
         </h1>
 
@@ -52,7 +69,7 @@ export const Hero = ({ data }: HeroProps) => {
                 key={social.label}
                 href={social.href}
                 aria-label={social.label}
-                className="grid h-7 w-7 place-items-center rounded-full border border-zinc-300 bg-zinc-100 text-zinc-500 transition-colors duration-200 hover:border-orange-600 hover:text-orange-600 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-400"
+                className="grid h-7 w-7 place-items-center rounded-full border border-zinc-300 bg-zinc-100 text-zinc-500 transition-colors duration-200 hover:border-accent hover:text-accent dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-400"
               >
                 <span className="text-xs font-bold leading-none">
                   {socialLabels[social.icon]}
@@ -69,8 +86,8 @@ export const Hero = ({ data }: HeroProps) => {
               href={action.href}
               className={
                 action.variant === "primary"
-                  ? "rounded-md bg-orange-600 px-8 py-3 text-sm font-semibold text-white transition-colors duration-200 hover:bg-orange-700"
-                  : "rounded-md border border-zinc-400 px-8 py-3 text-sm font-semibold text-zinc-600 transition-colors duration-200 hover:border-orange-600 hover:text-orange-600 dark:border-zinc-600 dark:text-zinc-300"
+                  ? "rounded-md bg-accent px-8 py-3 text-sm font-semibold text-white transition-colors duration-200 hover:bg-accent-hover"
+                  : "rounded-md border border-zinc-400 px-8 py-3 text-sm font-semibold text-zinc-600 transition-colors duration-200 hover:border-accent hover:text-accent dark:border-zinc-600 dark:text-zinc-300"
               }
             >
               {action.label}
@@ -86,7 +103,7 @@ export const Hero = ({ data }: HeroProps) => {
                 index > 0 ? "border-l border-zinc-300 dark:border-zinc-700" : ""
               }`}
             >
-              <p className="text-lg font-extrabold text-orange-600">
+              <p className="text-lg font-extrabold text-accent">
                 {stat.value}
               </p>
               <p className="mt-1 whitespace-nowrap text-xs font-semibold text-zinc-600 dark:text-zinc-300 sm:text-sm">
