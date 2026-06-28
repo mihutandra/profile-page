@@ -76,16 +76,21 @@ function App() {
   }, [theme]);
 
   return (
-    <main className="min-h-screen bg-[#f7f4ef] text-zinc-950 transition-colors duration-300 dark:bg-[#111111] dark:text-white">
+    <main className="min-h-screen bg-[var(--site-page-bg)] text-[var(--site-page-text)] transition-colors duration-[var(--motion-medium)]">
       <div className="min-h-screen w-full overflow-hidden">
         <Navbar
           data={data.navbar}
           theme={theme}
-          onThemeToggle={() =>
-            setTheme((currentTheme) =>
-              currentTheme === "dark" ? "light" : "dark",
-            )
-          }
+          onThemeToggle={() => {
+            setTheme((currentTheme) => {
+              const nextTheme = currentTheme === "dark" ? "light" : "dark";
+              document.documentElement.classList.toggle(
+                "dark",
+                nextTheme === "dark",
+              );
+              return nextTheme;
+            });
+          }}
         />
         <Hero data={data.hero} theme={theme} />
         <Services intro={data.servicesIntro} services={data.services} />

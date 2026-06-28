@@ -5,42 +5,42 @@ import './MagicBento.css';
 
 const DEFAULT_PARTICLE_COUNT = 12;
 const DEFAULT_SPOTLIGHT_RADIUS = 300;
-const DEFAULT_GLOW_COLOR = '13, 134, 214';
+const DEFAULT_GLOW_COLOR = 'var(--site-bento-glow-rgb)';
 const MOBILE_BREAKPOINT = 768;
 
 const defaultCardData = [
   {
-    color: '#120F17',
+    color: 'var(--site-services-card-bg)',
     title: 'Analytics',
     description: 'Track user behavior',
     label: 'Insights'
   },
   {
-    color: '#120F17',
+    color: 'var(--site-services-card-bg)',
     title: 'Dashboard',
     description: 'Centralized data view',
     label: 'Overview'
   },
   {
-    color: '#120F17',
+    color: 'var(--site-services-card-bg)',
     title: 'Collaboration',
     description: 'Work together seamlessly',
     label: 'Teamwork'
   },
   {
-    color: '#120F17',
+    color: 'var(--site-services-card-bg)',
     title: 'Automation',
     description: 'Streamline workflows',
     label: 'Efficiency'
   },
   {
-    color: '#120F17',
+    color: 'var(--site-services-card-bg)',
     title: 'Integration',
     description: 'Connect favorite tools',
     label: 'Connectivity'
   },
   {
-    color: '#120F17',
+    color: 'var(--site-services-card-bg)',
     title: 'Security',
     description: 'Enterprise-grade protection',
     label: 'Protection'

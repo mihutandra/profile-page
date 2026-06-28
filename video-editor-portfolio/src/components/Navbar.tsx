@@ -35,10 +35,10 @@ export const Navbar = ({ data, theme, onThemeToggle }: NavbarProps) => {
             <li key={link.href}>
               <a
                 href={link.href}
-                className={`transition-colors duration-200 ${
+                className={`transition-colors duration-[var(--motion-fast)] ${
                   index === 0
                     ? "text-accent"
-                    : "text-zinc-500 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-white"
+                    : "text-[var(--site-page-muted)] hover:text-[var(--site-page-text)]"
                 }`}
               >
                 {link.label}
@@ -51,11 +51,11 @@ export const Navbar = ({ data, theme, onThemeToggle }: NavbarProps) => {
       <button
         type="button"
         onClick={onThemeToggle}
-        className="inline-flex h-9 w-[74px] items-center rounded-full border border-zinc-300 bg-white p-1 transition-colors duration-300 dark:border-zinc-700 dark:bg-zinc-900"
+        className="inline-flex h-9 w-[74px] items-center rounded-full border border-[var(--site-border)] bg-[var(--site-control-bg)] p-1 transition-colors duration-[var(--motion-medium)]"
         aria-label={`Switch to ${isDark ? "light" : "dark"} mode`}
       >
         <span
-          className={`grid h-7 w-7 place-items-center rounded-full bg-accent text-white shadow-sm transition-transform duration-300 ${
+          className={`grid h-7 w-7 place-items-center rounded-full bg-accent text-[var(--site-page-inverse)] shadow-sm transition-transform duration-[var(--motion-medium)] ${
             isDark ? "translate-x-9" : "translate-x-0"
           }`}
         >

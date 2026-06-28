@@ -4,8 +4,32 @@ import { useEffect, useRef } from 'react';
 
 import './Balatro.css';
 
+function resolveCssColor(color) {
+  let resolvedColor = color;
+  let depth = 0;
+
+  while (typeof resolvedColor === 'string' && resolvedColor.startsWith('var(') && depth < 5) {
+    const propertyName = resolvedColor.slice(4, -1).trim();
+    resolvedColor = getComputedStyle(document.documentElement).getPropertyValue(propertyName).trim();
+    depth += 1;
+  }
+
+  return resolvedColor;
+}
+
 function hexToVec4(hex) {
-  let hexStr = hex.replace('#', '');
+  const color = resolveCssColor(hex);
+  const rgbMatch = color.match(/^rgba?\(([\d.]+)[,\s]+([\d.]+)[,\s]+([\d.]+)(?:[,\s/]+([\d.]+%?))?\)$/);
+  if (rgbMatch) {
+    return [
+      Number.parseFloat(rgbMatch[1]) / 255,
+      Number.parseFloat(rgbMatch[2]) / 255,
+      Number.parseFloat(rgbMatch[3]) / 255,
+      rgbMatch[4] ? Number.parseFloat(rgbMatch[4]) / (rgbMatch[4].includes('%') ? 100 : 1) : 1
+    ];
+  }
+
+  let hexStr = color.replace('#', '');
   let r = 0,
     g = 0,
     b = 0,
@@ -109,9 +133,9 @@ export default function Balatro({
   spinRotation = -2.0,
   spinSpeed = 7.0,
   offset = [0.0, 0.0],
-  color1 = '#DE443B',
-  color2 = '#006BB4',
-  color3 = '#162325',
+  color1 = 'var(--site-hero-canvas-primary)',
+  color2 = 'var(--site-hero-canvas-accent)',
+  color3 = 'var(--site-hero-canvas-depth)',
   contrast = 3.5,
   lighting = 0.4,
   spinAmount = 0.25,

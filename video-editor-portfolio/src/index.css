@@ -3,12 +3,85 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --color-accent: #0d86d6;
-  --color-accent-hover: #0a367d;
-  --color-surface: #1a1a1a;
-  --color-muted: #9ca3af;
+  --color-accent: var(--site-accent);
+  --color-accent-hover: var(--site-accent-hover);
+  --color-surface: var(--site-services-card-bg);
+  --color-muted: var(--site-page-muted);
   --font-display: "Syne", sans-serif;
   --font-body: "Inter", sans-serif;
+}
+
+:root {
+  color-scheme: light;
+
+  --site-accent: #0d86d6;
+  --site-accent-hover: #0a367d;
+  --site-accent-rgb: 13, 134, 214;
+
+  --site-page-bg: #f7f4ef;
+  --site-page-text: #09090b;
+  --site-page-muted: #71717a;
+  --site-page-subtle: #52525b;
+  --site-page-inverse: #ffffff;
+
+  --site-border: #d4d4d8;
+  --site-border-muted: #e4e4e7;
+  --site-control-bg: #ffffff;
+  --site-control-muted-bg: #f4f4f5;
+  --site-mask-solid: #ffffff;
+
+  --site-hero-canvas-primary: #f7f4ef;
+  --site-hero-canvas-accent: var(--site-accent);
+  --site-hero-canvas-depth: #f7f4ef;
+  --site-hero-canvas-opacity: 0.9;
+  --site-hero-overlay: rgb(247 244 239 / 35%);
+  --site-hero-portrait-bg: #e4e4e7;
+
+  --site-stats-bg: #ffffff;
+  --site-stats-border: #d4d4d8;
+  --site-stats-ring: #e4e4e7;
+
+  --site-services-card-bg: #191919;
+  --site-bento-text: #ffffff;
+  --site-bento-muted: #71717a;
+  --site-bento-border: rgb(var(--site-accent-rgb) / 30%);
+  --site-bento-glow: rgb(var(--site-accent-rgb) / 22%);
+  --site-bento-shadow: rgb(var(--site-accent-rgb) / 16%);
+  --site-bento-icon-shadow: rgb(var(--site-accent-rgb) / 25%);
+  --site-bento-glow-rgb: var(--site-accent-rgb);
+
+  --motion-fast: 0.2s;
+  --motion-medium: 0.3s;
+  --motion-hero-copy-duration: 0.5;
+  --motion-hero-media-duration: 0.6;
+  --motion-hero-media-delay: 0.1;
+  --motion-section-duration: 0.45;
+  --motion-section-delay: 0.08;
+}
+
+.dark {
+  color-scheme: dark;
+
+  --site-page-bg: #111111;
+  --site-page-text: #ffffff;
+  --site-page-muted: #71717a;
+  --site-page-subtle: #a1a1aa;
+  --site-page-inverse: #ffffff;
+
+  --site-border: #3f3f46;
+  --site-border-muted: #27272a;
+  --site-control-bg: #18181b;
+  --site-control-muted-bg: #18181b;
+
+  --site-hero-canvas-primary: #111111;
+  --site-hero-canvas-depth: #021f33;
+  --site-hero-canvas-opacity: 0.7;
+  --site-hero-overlay: rgb(17 17 17 / 60%);
+  --site-hero-portrait-bg: #202020;
+
+  --site-stats-bg: #191919;
+  --site-stats-border: #3f3f46;
+  --site-stats-ring: #27272a;
 }
 
 html {
@@ -26,5 +99,3 @@ body {
     "Segoe UI",
     sans-serif;
 }
-
-{/*TODO: add all color here to be modified by the user*/}
