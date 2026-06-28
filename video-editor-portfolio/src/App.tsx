@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import siteData from "./assets/data.json";
 import { Hero } from "./components/Hero";
 import { Navbar } from "./components/Navbar";
+import { Services } from "./components/Services";
 
 export type NavItem = {
   label: string;
@@ -25,6 +26,24 @@ export type HeroStat = {
   label: string;
 };
 
+export type ServicesIntro = {
+  title: string;
+  description: string;
+};
+
+export type Service = {
+  label: string;
+  title: string;
+  description: string;
+  icon:
+    | "video"
+    | "scissors"
+    | "sparkles"
+    | "palette"
+    | "megaphone"
+    | "clapperboard";
+};
+
 export type SiteData = {
   navbar: {
     logo: string;
@@ -42,10 +61,8 @@ export type SiteData = {
       alt: string;
     };
   };
-  servicesIntro: {
-    title: string;
-    description: string;
-  };
+  servicesIntro: ServicesIntro;
+  services: Service[];
 };
 
 function App() {
@@ -69,17 +86,7 @@ function App() {
           }
         />
         <Hero data={data.hero} theme={theme} />
-        <section
-          id="services"
-          className="mx-auto max-w-3xl px-6 pb-12 pt-8 text-center sm:pt-14 lg:pb-16"
-        >
-          <h2 className="text-2xl font-bold text-zinc-950 dark:text-white">
-            {data.servicesIntro.title}
-          </h2>
-          <p className="mt-4 text-sm leading-6 text-zinc-500 dark:text-zinc-500">
-            {data.servicesIntro.description}
-          </p>
-        </section>
+        <Services intro={data.servicesIntro} services={data.services} />
       </div>
     </main>
   );

@@ -1,25 +1,10 @@
+// @ts-nocheck
 import { Renderer, Program, Mesh, Triangle } from 'ogl';
 import { useEffect, useRef } from 'react';
 
 import './Balatro.css';
 
-type BalatroProps = {
-  spinRotation?: number;
-  spinSpeed?: number;
-  offset?: [number, number];
-  color1?: string;
-  color2?: string;
-  color3?: string;
-  contrast?: number;
-  lighting?: number;
-  spinAmount?: number;
-  pixelFilter?: number;
-  spinEase?: number;
-  isRotate?: boolean;
-  mouseInteraction?: boolean;
-};
-
-function hexToVec4(hex: string): [number, number, number, number] {
+function hexToVec4(hex) {
   let hexStr = hex.replace('#', '');
   let r = 0,
     g = 0,
@@ -134,8 +119,8 @@ export default function Balatro({
   spinEase = 1.0,
   isRotate = false,
   mouseInteraction = true
-}: BalatroProps) {
-  const containerRef = useRef<HTMLDivElement | null>(null);
+}) {
+  const containerRef = useRef(null);
 
   useEffect(() => {
     if (!containerRef.current) return;
@@ -144,7 +129,7 @@ export default function Balatro({
     const gl = renderer.gl;
     gl.clearColor(0, 0, 0, 1);
 
-    let program: Program | undefined;
+    let program;
 
     function resize() {
       renderer.setSize(container.offsetWidth, container.offsetHeight);
@@ -181,23 +166,21 @@ export default function Balatro({
     });
 
     const mesh = new Mesh(gl, { geometry, program });
-    let animationFrameId: number;
+    let animationFrameId;
 
-    function update(time: number) {
+    function update(time) {
       animationFrameId = requestAnimationFrame(update);
-      if (program) {
-        program.uniforms.iTime.value = time * 0.001;
-      }
+      program.uniforms.iTime.value = time * 0.001;
       renderer.render({ scene: mesh });
     }
     animationFrameId = requestAnimationFrame(update);
     container.appendChild(gl.canvas);
 
-    function handleMouseMove(event: MouseEvent) {
-      if (!mouseInteraction || !program) return;
+    function handleMouseMove(e) {
+      if (!mouseInteraction) return;
       const rect = container.getBoundingClientRect();
-      const x = (event.clientX - rect.left) / rect.width;
-      const y = 1.0 - (event.clientY - rect.top) / rect.height;
+      const x = (e.clientX - rect.left) / rect.width;
+      const y = 1.0 - (e.clientY - rect.top) / rect.height;
       program.uniforms.uMouse.value = [x, y];
     }
     container.addEventListener('mousemove', handleMouseMove);
@@ -206,9 +189,7 @@ export default function Balatro({
       cancelAnimationFrame(animationFrameId);
       window.removeEventListener('resize', resize);
       container.removeEventListener('mousemove', handleMouseMove);
-      if (gl.canvas.parentNode === container) {
-        container.removeChild(gl.canvas);
-      }
+      container.removeChild(gl.canvas);
       gl.getExtension('WEBGL_lose_context')?.loseContext();
     };
   }, [
@@ -225,6 +206,7 @@ export default function Balatro({
     spinEase,
     isRotate,
     mouseInteraction,
+    containerRef
   ]);
 
   return <div ref={containerRef} className="balatro-container" />;

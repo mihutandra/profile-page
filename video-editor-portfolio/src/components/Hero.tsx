@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import Balatro from "./Balatro";
+import Balatro from "../../@/components/Balatro";
 import type { HeroAction, HeroStat, SocialLink } from "../App";
 
 type HeroProps = {
