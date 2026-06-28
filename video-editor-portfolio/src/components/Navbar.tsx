@@ -3,7 +3,9 @@ import type { NavItem } from "../App";
 
 type NavbarProps = {
   data: {
-    logo: string;
+    logoLight: string;
+    logoDark: string;
+    logoAlt: string;
     links: NavItem[];
   };
   theme: "light" | "dark";
@@ -12,14 +14,19 @@ type NavbarProps = {
 
 export const Navbar = ({ data, theme, onThemeToggle }: NavbarProps) => {
   const isDark = theme === "dark";
+  const logoSrc = isDark ? data.logoDark : data.logoLight;
 
   return (
     <header className="relative z-20 flex w-full items-center justify-between px-6 py-8 sm:px-10 lg:px-16 xl:px-20">
       <a
         href="#home"
-        className="text-lg font-extrabold uppercase tracking-normal text-accent"
+        className="flex h-14 w-36 items-center overflow-hidden sm:h-16 sm:w-44"
       >
-        {data.logo}
+        <img
+          src={logoSrc}
+          alt={data.logoAlt}
+          className="h-full w-full object-contain object-left"
+        />
       </a>
 
       <nav aria-label="Main navigation" className="hidden md:block">

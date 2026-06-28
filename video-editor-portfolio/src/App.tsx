@@ -46,7 +46,9 @@ export type Service = {
 
 export type SiteData = {
   navbar: {
-    logo: string;
+    logoLight: string;
+    logoDark: string;
+    logoAlt: string;
     links: NavItem[];
   };
   hero: {

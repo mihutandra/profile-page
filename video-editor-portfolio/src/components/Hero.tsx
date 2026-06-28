@@ -29,17 +29,17 @@ export const Hero = ({ data, theme }: HeroProps) => {
   const isLight = theme === "light";
   const balatroColors = isLight
     ? {
-        color1: "#f8fbff",
+        color1: "#f7f4ef",
         color2: "#0d86d6",
-        color3: "#eef6ff",
+        color3: "#f7f4ef",
         opacity: "opacity-90",
         overlay: "bg-[#f7f4ef]/35",
       }
     : {
-        color1: "#00101a",
+        color1: "#111111",
         color2: "#0d86d6",
         color3: "#021f33",
-        opacity: "opacity-55",
+        opacity: "opacity-70",
         overlay: "bg-[#111111]/60",
       };
 
