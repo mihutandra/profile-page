@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import Balatro from "./Balatro";
+import Balatro from "../../@/components/Balatro";
 import type { HeroAction, HeroStat, SocialLink } from "../App";
 
 type HeroProps = {
@@ -25,36 +25,29 @@ const socialLabels: Record<SocialLink["icon"], string> = {
   behance: "Be",
 };
 
+const getMotionValue = (name: string, fallback: number) => {
+  if (typeof window === "undefined") return fallback;
+
+  const value = getComputedStyle(document.documentElement)
+    .getPropertyValue(name)
+    .trim();
+
+  return Number.parseFloat(value) || fallback;
+};
+
 export const Hero = ({ data, theme }: HeroProps) => {
-  const isLight = theme === "light";
-  const balatroColors = isLight
-    ? {
-        color1: "#f8fbff",
-        color2: "#0d86d6",
-        color3: "#eef6ff",
-        opacity: "opacity-90",
-        overlay: "bg-[#f7f4ef]/35",
-      }
-    : {
-        color1: "#00101a",
-        color2: "#0d86d6",
-        color3: "#021f33",
-        opacity: "opacity-55",
-        overlay: "bg-[#111111]/60",
-      };
 
   return (
     <section
       id="home"
       className="relative isolate grid w-full items-center gap-12 overflow-hidden px-6 pb-12 pt-10 sm:px-10 md:grid-cols-[0.92fr_1.08fr] lg:min-h-[620px] lg:px-16 lg:pb-16 lg:pt-8 xl:px-20"
     >
-      <div
-        className={`pointer-events-none absolute inset-0 -z-20 ${balatroColors.opacity}`}
-      >
+      <div className="pointer-events-none absolute inset-0 -z-20 opacity-[var(--site-hero-canvas-opacity)]">
         <Balatro
-          color1={balatroColors.color1}
-          color2={balatroColors.color2}
-          color3={balatroColors.color3}
+          key={theme}
+          color1="var(--site-hero-canvas-primary)"
+          color2="var(--site-hero-canvas-accent)"
+          color3="var(--site-hero-canvas-depth)"
           contrast={3.6}
           lighting={0.35}
           spinSpeed={4.5}
@@ -64,20 +57,20 @@ export const Hero = ({ data, theme }: HeroProps) => {
           mouseInteraction={false}
         />
       </div>
-      <div
-        className={`pointer-events-none absolute inset-0 -z-10 ${balatroColors.overlay}`}
-      />
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-[var(--site-hero-overlay)]" />
 
       <motion.div
         initial={{ opacity: 0, y: 18 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
+        transition={{
+          duration: getMotionValue("--motion-hero-copy-duration", 0.5),
+        }}
         className="relative z-10"
       >
-        <p className="text-base font-semibold leading-7 text-zinc-500 dark:text-zinc-500">
+        <p className="text-base font-semibold leading-7 text-[var(--site-page-muted)]">
           {data.eyebrow}
           <br />
-          <span className="text-zinc-600 dark:text-zinc-400">{data.name}</span>
+          <span className="text-[var(--site-page-subtle)]">{data.name}</span>
         </p>
 
         <h1 className="mt-5 text-5xl font-extrabold leading-none tracking-normal text-accent sm:text-6xl lg:text-7xl">
@@ -91,7 +84,7 @@ export const Hero = ({ data, theme }: HeroProps) => {
                 key={social.label}
                 href={social.href}
                 aria-label={social.label}
-                className="grid h-7 w-7 place-items-center rounded-full border border-zinc-300 bg-zinc-100 text-zinc-500 transition-colors duration-200 hover:border-accent hover:text-accent dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-400"
+                className="grid h-7 w-7 place-items-center rounded-full border border-[var(--site-border)] bg-[var(--site-control-muted-bg)] text-[var(--site-page-muted)] transition-colors duration-[var(--motion-fast)] hover:border-accent hover:text-accent"
               >
                 <span className="text-xs font-bold leading-none">
                   {socialLabels[social.icon]}
@@ -108,8 +101,8 @@ export const Hero = ({ data, theme }: HeroProps) => {
               href={action.href}
               className={
                 action.variant === "primary"
-                  ? "rounded-md bg-accent px-8 py-3 text-sm font-semibold text-white transition-colors duration-200 hover:bg-accent-hover"
-                  : "rounded-md border border-zinc-400 px-8 py-3 text-sm font-semibold text-zinc-600 transition-colors duration-200 hover:border-accent hover:text-accent dark:border-zinc-600 dark:text-zinc-300"
+                  ? "rounded-md bg-accent px-8 py-3 text-sm font-semibold text-[var(--site-page-inverse)] transition-colors duration-[var(--motion-fast)] hover:bg-accent-hover"
+                  : "rounded-md border border-[var(--site-border)] px-8 py-3 text-sm font-semibold text-[var(--site-page-subtle)] transition-colors duration-[var(--motion-fast)] hover:border-accent hover:text-accent"
               }
             >
               {action.label}
@@ -117,16 +110,16 @@ export const Hero = ({ data, theme }: HeroProps) => {
           ))}
         </div>
 
-        <div className="mt-12 inline-grid grid-cols-3 rounded-md bg-white shadow-sm ring-1 ring-zinc-200 dark:bg-[#191919] dark:ring-zinc-800">
+        <div className="mt-12 inline-grid grid-cols-3 rounded-md bg-[var(--site-stats-bg)] shadow-sm ring-1 ring-[var(--site-stats-ring)]">
           {data.stats.map((stat, index) => (
             <div
               key={stat.label}
               className={`px-5 py-5 sm:px-6 ${
-                index > 0 ? "border-l border-zinc-300 dark:border-zinc-700" : ""
+                index > 0 ? "border-l border-[var(--site-stats-border)]" : ""
               }`}
             >
               <p className="text-lg font-extrabold text-accent">{stat.value}</p>
-              <p className="mt-1 whitespace-nowrap text-xs font-semibold text-zinc-600 dark:text-zinc-300 sm:text-sm">
+              <p className="mt-1 whitespace-nowrap text-xs font-semibold text-[var(--site-page-subtle)] sm:text-sm">
                 {stat.label}
               </p>
             </div>
@@ -137,10 +130,13 @@ export const Hero = ({ data, theme }: HeroProps) => {
       <motion.div
         initial={{ opacity: 0, scale: 0.96 }}
         animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.6, delay: 0.1 }}
+        transition={{
+          duration: getMotionValue("--motion-hero-media-duration", 0.6),
+          delay: getMotionValue("--motion-hero-media-delay", 0.1),
+        }}
         className="relative mx-auto flex aspect-square w-full max-w-[470px] items-end justify-center"
       >
-        <div className="absolute bottom-3 left-1/2 h-[78%] w-[78%] -translate-x-1/2 rounded-full bg-zinc-200 dark:bg-[#202020]" />
+        <div className="absolute bottom-3 left-1/2 h-[78%] w-[78%] -translate-x-1/2 rounded-full bg-[var(--site-hero-portrait-bg)]" />
         <img
           src={data.image.src}
           alt={data.image.alt}

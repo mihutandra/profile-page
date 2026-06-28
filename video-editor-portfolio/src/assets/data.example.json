@@ -1,6 +1,8 @@
 {
   "navbar": {
-    "logo": "LOGO",
+    "logoLight": "/logo-light.png",
+    "logoDark": "/logo-dark.png",
+    "logoAlt": "Christian Bergmann logo",
     "links": [
       {
         "label": "Home",
@@ -79,5 +81,43 @@
   "servicesIntro": {
     "title": "Services",
     "description": "Add a short description of your editing, motion, color, and content services here."
-  }
+  },
+  "services": [
+    {
+      "label": "SHORTS",
+      "title": "Short-Form Edits",
+      "description": "Fast-paced reels, shorts, and social clips shaped for retention and clean delivery.",
+      "icon": "scissors"
+    },
+    {
+      "label": "EDITING",
+      "title": "Video Editing",
+      "description": "Polished long-form edits with pacing, structure, sound, and story handled end to end.",
+      "icon": "video"
+    },
+    {
+      "label": "MOTION",
+      "title": "Motion Graphics",
+      "description": "Animated titles, callouts, transitions, and visual accents that support the edit.",
+      "icon": "sparkles"
+    },
+    {
+      "label": "COLOR",
+      "title": "Color Grading",
+      "description": "Consistent color, contrast, and finishing so every shot feels intentional.",
+      "icon": "palette"
+    },
+    {
+      "label": "CONTENT",
+      "title": "Content Packages",
+      "description": "Platform-ready batches with hooks, captions, aspect ratios, and export versions.",
+      "icon": "megaphone"
+    },
+    {
+      "label": "PRODUCTION",
+      "title": "Production Support",
+      "description": "Creative direction, shot planning, and edit notes to make footage easier to shape.",
+      "icon": "clapperboard"
+    }
+  ]
 }

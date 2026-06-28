@@ -3,7 +3,9 @@ import type { NavItem } from "../App";
 
 type NavbarProps = {
   data: {
-    logo: string;
+    logoLight: string;
+    logoDark: string;
+    logoAlt: string;
     links: NavItem[];
   };
   theme: "light" | "dark";
@@ -12,14 +14,19 @@ type NavbarProps = {
 
 export const Navbar = ({ data, theme, onThemeToggle }: NavbarProps) => {
   const isDark = theme === "dark";
+  const logoSrc = isDark ? data.logoDark : data.logoLight;
 
   return (
     <header className="relative z-20 flex w-full items-center justify-between px-6 py-8 sm:px-10 lg:px-16 xl:px-20">
       <a
         href="#home"
-        className="text-lg font-extrabold uppercase tracking-normal text-accent"
+        className="flex h-14 w-36 items-center overflow-hidden sm:h-16 sm:w-44"
       >
-        {data.logo}
+        <img
+          src={logoSrc}
+          alt={data.logoAlt}
+          className="h-full w-full object-contain object-left"
+        />
       </a>
 
       <nav aria-label="Main navigation" className="hidden md:block">
@@ -28,10 +35,10 @@ export const Navbar = ({ data, theme, onThemeToggle }: NavbarProps) => {
             <li key={link.href}>
               <a
                 href={link.href}
-                className={`transition-colors duration-200 ${
+                className={`transition-colors duration-[var(--motion-fast)] ${
                   index === 0
                     ? "text-accent"
-                    : "text-zinc-500 hover:text-zinc-950 dark:text-zinc-400 dark:hover:text-white"
+                    : "text-[var(--site-page-muted)] hover:text-[var(--site-page-text)]"
                 }`}
               >
                 {link.label}
@@ -44,11 +51,11 @@ export const Navbar = ({ data, theme, onThemeToggle }: NavbarProps) => {
       <button
         type="button"
         onClick={onThemeToggle}
-        className="inline-flex h-9 w-[74px] items-center rounded-full border border-zinc-300 bg-white p-1 transition-colors duration-300 dark:border-zinc-700 dark:bg-zinc-900"
+        className="inline-flex h-9 w-[74px] items-center rounded-full border border-[var(--site-border)] bg-[var(--site-control-bg)] p-1 transition-colors duration-[var(--motion-medium)]"
         aria-label={`Switch to ${isDark ? "light" : "dark"} mode`}
       >
         <span
-          className={`grid h-7 w-7 place-items-center rounded-full bg-accent text-white shadow-sm transition-transform duration-300 ${
+          className={`grid h-7 w-7 place-items-center rounded-full bg-accent text-[var(--site-page-inverse)] shadow-sm transition-transform duration-[var(--motion-medium)] ${
             isDark ? "translate-x-9" : "translate-x-0"
           }`}
         >
