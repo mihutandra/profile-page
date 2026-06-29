@@ -40,6 +40,7 @@
   --site-stats-bg: #ffffff;
   --site-stats-border: #d4d4d8;
   --site-stats-ring: #e4e4e7;
+  --site-skill-track: #d4d4d8;
 
   --site-services-card-bg: #191919;
   --site-bento-text: #ffffff;
@@ -55,7 +56,7 @@
   --motion-hero-copy-duration: 0.5;
   --motion-hero-media-duration: 0.6;
   --motion-hero-media-delay: 0.1;
-  --motion-section-duration: 0.45;
+  --motion-section-duration: 1;
   --motion-section-delay: 0.08;
 }
 
@@ -82,6 +83,7 @@
   --site-stats-bg: #191919;
   --site-stats-border: #3f3f46;
   --site-stats-ring: #27272a;
+  --site-skill-track: #3f3f46;
 }
 
 html {
@@ -98,4 +100,90 @@ body {
     BlinkMacSystemFont,
     "Segoe UI",
     sans-serif;
+}
+
+.about-skills {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2.25rem 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.about-skills__item {
+  display: grid;
+  min-width: 0;
+  place-items: center;
+  outline: none;
+}
+
+.about-skills__item:focus-visible .about-skill__ring {
+  outline: 2px solid var(--site-accent);
+  outline-offset: 5px;
+}
+
+.about-skill {
+  display: grid;
+  min-width: 0;
+  place-items: center;
+  gap: 0.42rem;
+  text-align: center;
+}
+
+.about-skill__ring {
+  display: grid;
+  width: 92px;
+  height: 92px;
+  place-items: center;
+  border-radius: 999px;
+  background:
+    linear-gradient(var(--site-control-muted-bg), var(--site-control-muted-bg))
+      padding-box,
+    conic-gradient(
+        var(--site-accent) var(--skill-progress),
+        var(--site-skill-track) 0
+      )
+      border-box;
+  border: 8px solid transparent;
+  box-shadow: 0 16px 36px rgb(var(--site-accent-rgb) / 12%);
+}
+
+.about-skill__abbr {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border-radius: 8px;
+  border: 1px solid var(--site-page-muted);
+  color: var(--site-page-muted);
+  font-size: 0.95rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.about-skill__level {
+  color: var(--site-accent);
+  font-size: 1.05rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.about-skill__name {
+  color: var(--site-page-muted);
+  font-size: 0.92rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+@media (min-width: 640px) {
+  .about-skills {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .about-skills {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
 }
