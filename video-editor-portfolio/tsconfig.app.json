@@ -25,5 +25,10 @@
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", "@/components/Balatro.tsx", "@/components/MagicBento.tsx"]
+  "include": [
+    "src",
+    "@/components/Balatro.tsx",
+    "@/components/MagicBento.tsx",
+    "@/components/ChromaGrid.tsx"
+  ]
 }

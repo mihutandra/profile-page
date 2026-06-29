@@ -3,6 +3,7 @@ import siteData from "./assets/data.json";
 import { About } from "./components/About";
 import { Hero } from "./components/Hero";
 import { Navbar } from "./components/Navbar";
+import { Portfolio } from "./components/Portfolio";
 import { Services } from "./components/Services";
 
 export type NavItem = {
@@ -30,6 +31,11 @@ export type HeroStat = {
 export type ServicesIntro = {
   title: string;
   description: string;
+};
+
+export type SectionIntro = {
+  title: string;
+  subtitle: string;
 };
 
 export type Service = {
@@ -64,6 +70,14 @@ export type AboutData = {
   skills: AboutSkill[];
 };
 
+export type PortfolioProject = {
+  title: string;
+  cover: string;
+  href: string;
+  borderColor: string;
+  gradient: string;
+};
+
 export type SiteData = {
   navbar: {
     logoLight: string;
@@ -86,6 +100,8 @@ export type SiteData = {
   servicesIntro: ServicesIntro;
   services: Service[];
   about: AboutData;
+  portfolioIntro: SectionIntro;
+  portfolio: PortfolioProject[];
 };
 
 function App() {
@@ -116,6 +132,7 @@ function App() {
         <Hero data={data.hero} theme={theme} />
         <Services intro={data.servicesIntro} services={data.services} />
         <About data={data.about} />
+        <Portfolio intro={data.portfolioIntro} projects={data.portfolio} />
       </div>
     </main>
   );

@@ -59,19 +59,19 @@ export const About = ({ data }: AboutProps) => {
 
       <div className="mt-12 grid items-center gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
         <motion.div
-          initial={{ opacity: 0, x: -18 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.25 }}
+          initial={{ opacity: 0, scale: 0.96 }}
+          animate={{ opacity: 1, scale: 1 }}
           transition={{
-            duration: getMotionValue("--motion-section-duration", 0.45),
+            duration: getMotionValue("--motion-hero-media-duration", 0.6),
+            delay: getMotionValue("--motion-hero-media-delay", 0.1),
           }}
-          className="relative mx-auto flex aspect-[0.78] w-full max-w-[430px] items-end justify-center overflow-hidden rounded-lg bg-[var(--site-hero-portrait-bg)]"
+          className="relative mx-auto flex aspect-square w-full max-w-[470px] items-end justify-center"
         >
-          <div className="absolute bottom-8 left-1/2 h-[72%] w-[86%] -translate-x-1/2 rounded-full bg-[rgb(var(--site-accent-rgb)/0.13)]" />
+          <div className="absolute bottom-3 left-1/2 h-[78%] w-[78%] -translate-x-1/2 rounded-[240px] bg-[var(--site-hero-portrait-bg)]" />
           <img
             src={data.image.src}
             alt={data.image.alt}
-            className="relative z-10 h-full w-[88%] object-contain object-bottom grayscale"
+            className="relative z-10 mb-4 max-h-[435px] w-[82%] rounded-[244px] object-contain grayscale mix-blend-luminosity"
           />
         </motion.div>
 
