@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import siteData from "./assets/data.json";
+import { About } from "./components/About";
 import { Hero } from "./components/Hero";
 import { Navbar } from "./components/Navbar";
 import { Services } from "./components/Services";
@@ -44,6 +45,25 @@ export type Service = {
     | "clapperboard";
 };
 
+export type AboutSkill = {
+  name: string;
+  shortLabel: string;
+  level: number;
+};
+
+export type AboutData = {
+  title: string;
+  subtitle: string;
+  description: string;
+  cvLabel: string;
+  cvHref: string;
+  image: {
+    src: string;
+    alt: string;
+  };
+  skills: AboutSkill[];
+};
+
 export type SiteData = {
   navbar: {
     logoLight: string;
@@ -65,6 +85,7 @@ export type SiteData = {
   };
   servicesIntro: ServicesIntro;
   services: Service[];
+  about: AboutData;
 };
 
 function App() {
@@ -94,6 +115,7 @@ function App() {
         />
         <Hero data={data.hero} theme={theme} />
         <Services intro={data.servicesIntro} services={data.services} />
+        <About data={data.about} />
       </div>
     </main>
   );

@@ -119,5 +119,43 @@
       "description": "Creative direction, shot planning, and edit notes to make footage easier to shape.",
       "icon": "clapperboard"
     }
-  ]
+  ],
+  "about": {
+    "title": "About Me",
+    "subtitle": "User Interface And User Experience And Also Video Editing",
+    "description": "Add a short personal bio here. Mention your editing style, creative strengths, tools, and the kind of client work you want to attract.",
+    "cvLabel": "Download CV",
+    "cvHref": "/cv.pdf",
+    "image": {
+      "src": "/images/hero.png",
+      "alt": "Portfolio portrait"
+    },
+    "skills": [
+      {
+        "name": "Figma",
+        "shortLabel": "Fi",
+        "level": 100
+      },
+      {
+        "name": "Adobe XD",
+        "shortLabel": "Xd",
+        "level": 100
+      },
+      {
+        "name": "Adobe Photoshop",
+        "shortLabel": "Ps",
+        "level": 85
+      },
+      {
+        "name": "Adobe Illustrator",
+        "shortLabel": "Ai",
+        "level": 60
+      },
+      {
+        "name": "Adobe Premiere",
+        "shortLabel": "Pr",
+        "level": 70
+      }
+    ]
+  }
 }
