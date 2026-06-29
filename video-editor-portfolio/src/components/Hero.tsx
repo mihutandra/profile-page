@@ -36,7 +36,6 @@ const getMotionValue = (name: string, fallback: number) => {
 };
 
 export const Hero = ({ data, theme }: HeroProps) => {
-
   return (
     <section
       id="home"
@@ -136,11 +135,11 @@ export const Hero = ({ data, theme }: HeroProps) => {
         }}
         className="relative mx-auto flex aspect-square w-full max-w-[470px] items-end justify-center"
       >
-        <div className="absolute bottom-3 left-1/2 h-[78%] w-[78%] -translate-x-1/2 rounded-full bg-[var(--site-hero-portrait-bg)]" />
+        <div className="absolute bottom-3 left-1/2 h-[78%] w-[78%] -translate-x-1/2 rounded-[240px] bg-[var(--site-hero-portrait-bg)]" />
         <img
           src={data.image.src}
           alt={data.image.alt}
-          className="relative z-10 max-h-[440px] w-[82%] object-contain grayscale"
+          className="relative z-10 mb-4 max-h-[435px] w-[82%] rounded-[244px] object-contain grayscale mix-blend-luminosity"
         />
       </motion.div>
     </section>

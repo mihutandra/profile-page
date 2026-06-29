@@ -74,7 +74,7 @@
       }
     ],
     "image": {
-      "src": "/images/hero.png",
+      "src": "/hero.png",
       "alt": "Portfolio hero portrait"
     }
   },
@@ -127,7 +127,7 @@
     "cvLabel": "Download CV",
     "cvHref": "/cv.pdf",
     "image": {
-      "src": "/images/hero.png",
+      "src": "/hero.png",
       "alt": "Portfolio portrait"
     },
     "skills": [
@@ -157,5 +157,53 @@
         "level": 70
       }
     ]
-  }
+  },
+  "portfolioIntro": {
+    "title": "Portfolio",
+    "subtitle": "Add a short description of the projects, reels, and client work you want to showcase."
+  },
+  "portfolio": [
+    {
+      "title": "Portfolio project 1",
+      "cover": "/portfolio/project-img-4.png",
+      "href": "https://drive.google.com/",
+      "borderColor": "#0d86d6",
+      "gradient": "linear-gradient(145deg, #0d86d6, #111111)"
+    },
+    {
+      "title": "Portfolio project 2",
+      "cover": "/portfolio/project-img-5.png",
+      "href": "https://drive.google.com/",
+      "borderColor": "#f97316",
+      "gradient": "linear-gradient(165deg, #f97316, #111111)"
+    },
+    {
+      "title": "Portfolio project 3",
+      "cover": "/portfolio/project-img-6.png",
+      "href": "https://drive.google.com/",
+      "borderColor": "#14b8a6",
+      "gradient": "linear-gradient(195deg, #14b8a6, #111111)"
+    },
+    {
+      "title": "Portfolio project 4",
+      "cover": "/portfolio/project-img-4.png",
+      "href": "https://drive.google.com/",
+      "borderColor": "#eab308",
+      "gradient": "linear-gradient(210deg, #eab308, #111111)"
+    },
+    {
+      "title": "Portfolio project 5",
+      "cover": "/portfolio/project-img-5.png",
+      "href": "https://drive.google.com/",
+      "borderColor": "#ef4444",
+      "gradient": "linear-gradient(225deg, #ef4444, #111111)"
+    },
+    {
+      "title": "Portfolio project 6",
+      "cover": "/portfolio/project-img-6.png",
+      "href": "https://drive.google.com/",
+      "borderColor": "#8b5cf6",
+      "gradient": "linear-gradient(135deg, #8b5cf6, #111111)"
+    }
+  ]
 }
