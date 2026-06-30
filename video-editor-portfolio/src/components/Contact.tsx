@@ -1,7 +1,15 @@
 import { ValidationError, useForm } from "@formspree/react";
 import { motion } from "framer-motion";
 import { Send } from "lucide-react";
+import { useState } from "react";
 import type { ContactData } from "../App";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "./ui/select";
 
 type ContactProps = {
   data: ContactData;
@@ -24,6 +32,7 @@ const errorClass = "mt-2 text-xs font-medium text-red-400";
 
 export const Contact = ({ data }: ContactProps) => {
   const [state, handleSubmit] = useForm(data.formId);
+  const [selectedService, setSelectedService] = useState("");
 
   return (
     <section
@@ -141,22 +150,26 @@ export const Contact = ({ data }: ContactProps) => {
               <label htmlFor="service" className="sr-only">
                 Service Of Interest
               </label>
-              <select
-                id="service"
+              <Select
                 name="service"
                 required
-                defaultValue=""
-                className={`${fieldClass} appearance-none bg-[linear-gradient(45deg,transparent_50%,var(--site-page-muted)_50%),linear-gradient(135deg,var(--site-page-muted)_50%,transparent_50%)] bg-[length:6px_6px,6px_6px] bg-[position:calc(100%-23px)_50%,calc(100%-17px)_50%] bg-no-repeat pr-12`}
+                value={selectedService}
+                onValueChange={setSelectedService}
               >
-                <option value="" disabled>
-                  Service Of Interest
-                </option>
-                {data.services.map((service) => (
-                  <option key={service} value={service}>
-                    {service}
-                  </option>
-                ))}
-              </select>
+                <SelectTrigger
+                  id="service"
+                  className="w-full border-transparent px-5"
+                >
+                  <SelectValue placeholder="Service Of Interest" />
+                </SelectTrigger>
+                <SelectContent>
+                  {data.services.map((service) => (
+                    <SelectItem key={service} value={service}>
+                      {service}
+                    </SelectItem>
+                  ))}
+                </SelectContent>
+              </Select>
               <ValidationError
                 prefix="Service"
                 field="service"

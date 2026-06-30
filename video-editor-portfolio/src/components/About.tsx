@@ -71,7 +71,7 @@ export const About = ({ data }: AboutProps) => {
           <img
             src={data.image.src}
             alt={data.image.alt}
-            className="relative z-10 mb-4 max-h-[435px] w-[82%] rounded-[244px] object-contain grayscale mix-blend-luminosity"
+            className="relative z-10 mb-4 max-h-[435px] w-[82%] rounded-[244px] object-contain grayscale"
           />
         </motion.div>
 
