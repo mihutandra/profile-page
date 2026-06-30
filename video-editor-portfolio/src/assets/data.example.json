@@ -205,5 +205,18 @@
       "borderColor": "#8b5cf6",
       "gradient": "linear-gradient(135deg, #8b5cf6, #111111)"
     }
-  ]
+  ],
+  "contact": {
+    "title": "Contact me",
+    "subtitle": "Cultivating Connections: Reach Out And Connect With Me",
+    "formId": "xaqgdejl",
+    "services": [
+      "Short-Form Edits",
+      "Video Editing",
+      "Motion Graphics",
+      "Color Grading",
+      "Content Packages",
+      "Production Support"
+    ]
+  }
 }

@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import siteData from "./assets/data.json";
 import { About } from "./components/About";
+import { Contact } from "./components/Contact";
 import { Hero } from "./components/Hero";
 import { Navbar } from "./components/Navbar";
 import { Portfolio } from "./components/Portfolio";
@@ -36,6 +37,11 @@ export type ServicesIntro = {
 export type SectionIntro = {
   title: string;
   subtitle: string;
+};
+
+export type ContactData = SectionIntro & {
+  formId: string;
+  services: string[];
 };
 
 export type Service = {
@@ -102,6 +108,7 @@ export type SiteData = {
   about: AboutData;
   portfolioIntro: SectionIntro;
   portfolio: PortfolioProject[];
+  contact: ContactData;
 };
 
 function App() {
@@ -133,6 +140,7 @@ function App() {
         <Services intro={data.servicesIntro} services={data.services} />
         <About data={data.about} />
         <Portfolio intro={data.portfolioIntro} projects={data.portfolio} />
+        <Contact data={data.contact} />
       </div>
     </main>
   );
