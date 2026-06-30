@@ -28,6 +28,8 @@
   --site-border-muted: #e4e4e7;
   --site-control-bg: #ffffff;
   --site-control-muted-bg: #f4f4f5;
+  --site-contact-control-bg: #ffffff;
+  --site-contact-control-focus: #f4f4f5;
   --site-mask-solid: #ffffff;
 
   --site-hero-canvas-primary: #f7f4ef;
@@ -73,6 +75,8 @@
   --site-border-muted: #27272a;
   --site-control-bg: #18181b;
   --site-control-muted-bg: #18181b;
+  --site-contact-control-bg: #191919;
+  --site-contact-control-focus: #202020;
 
   --site-hero-canvas-primary: #111111;
   --site-hero-canvas-depth: #021f33;
@@ -80,6 +84,7 @@
   --site-hero-overlay: rgb(17 17 17 / 60%);
   --site-hero-portrait-bg: #202020;
 
+  --site-services-card-bg: #191919;
   --site-stats-bg: #191919;
   --site-stats-border: #3f3f46;
   --site-stats-ring: #27272a;
