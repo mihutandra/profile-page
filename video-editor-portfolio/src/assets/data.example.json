@@ -218,5 +218,61 @@
       "Content Packages",
       "Production Support"
     ]
+  },
+  "footer": {
+    "logoLight": "/logo-light.png",
+    "logoDark": "/logo-dark.png",
+    "logoAlt": "Christian Bergmann logo",
+    "fallbackLogoText": "Logo",
+    "links": [
+      {
+        "label": "Home",
+        "href": "#home"
+      },
+      {
+        "label": "Services",
+        "href": "#services"
+      },
+      {
+        "label": "About me",
+        "href": "#about"
+      },
+      {
+        "label": "Portfolio",
+        "href": "#portfolio"
+      },
+      {
+        "label": "Contact me",
+        "href": "#contact"
+      }
+    ],
+    "socials": [
+      {
+        "label": "Instagram",
+        "href": "https://instagram.com/your-profile",
+        "icon": "instagram"
+      },
+      {
+        "label": "LinkedIn",
+        "href": "https://linkedin.com/in/your-profile",
+        "icon": "linkedin"
+      },
+      {
+        "label": "Portfolio",
+        "href": "https://example.com",
+        "icon": "dribbble"
+      },
+      {
+        "label": "Behance",
+        "href": "https://behance.net/your-profile",
+        "icon": "behance"
+      }
+    ],
+    "contact": {
+      "email": "you@example.com",
+      "phone": "+1 555 000 0000"
+    },
+    "credit1": "Designed by @yourhandle UI/UX designer",
+    "credit2": "Implemented by @anotherexample"
   }
 }

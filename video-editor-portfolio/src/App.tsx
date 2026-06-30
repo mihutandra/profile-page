@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import siteData from "./assets/data.json";
 import { About } from "./components/About";
 import { Contact } from "./components/Contact";
+import { Footer } from "./components/Footer";
 import { Hero } from "./components/Hero";
 import { Navbar } from "./components/Navbar";
 import { Portfolio } from "./components/Portfolio";
@@ -42,6 +43,21 @@ export type SectionIntro = {
 export type ContactData = SectionIntro & {
   formId: string;
   services: string[];
+};
+
+export type FooterData = {
+  logoLight: string;
+  logoDark: string;
+  logoAlt: string;
+  fallbackLogoText: string;
+  links: NavItem[];
+  socials: SocialLink[];
+  contact: {
+    email: string;
+    phone: string;
+  };
+  credit1: string;
+  credit2: string;
 };
 
 export type Service = {
@@ -109,6 +125,7 @@ export type SiteData = {
   portfolioIntro: SectionIntro;
   portfolio: PortfolioProject[];
   contact: ContactData;
+  footer: FooterData;
 };
 
 function App() {
@@ -141,6 +158,7 @@ function App() {
         <About data={data.about} />
         <Portfolio intro={data.portfolioIntro} projects={data.portfolio} />
         <Contact data={data.contact} />
+        <Footer data={data.footer} theme={theme} />
       </div>
     </main>
   );
