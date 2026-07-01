@@ -28,6 +28,7 @@
   "include": [
     "src",
     "@/components/Balatro.tsx",
+    "@/components/Galaxy.tsx",
     "@/components/MagicBento.tsx",
     "@/components/ChromaGrid.tsx"
   ]

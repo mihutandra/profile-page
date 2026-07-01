@@ -32,7 +32,7 @@ const socialIcons: Record<SocialLink["icon"], ReactNode> = {
 
 export const Footer = ({ data }: FooterProps) => {
   return (
-    <footer className="border-t border-[var(--site-border-muted)] bg-[var(--site-control-muted-bg)] px-6 py-16 text-[var(--site-page-muted)] sm:px-10 lg:px-16 xl:px-20">
+    <footer className="border-t border-(--site-border-muted) bg-(--site-control-muted-bg) px-6 py-16 text-(--site-page-muted) sm:px-10 lg:px-16 xl:px-20">
       <div className="mx-auto flex w-full max-w-5xl flex-col items-center text-center">
         <nav aria-label="Footer navigation" className="mt-9">
           <ul className="flex flex-wrap items-center justify-center gap-x-9 gap-y-4 text-sm font-semibold">
@@ -40,7 +40,7 @@ export const Footer = ({ data }: FooterProps) => {
               <li key={link.href}>
                 <a
                   href={link.href}
-                  className="transition-colors duration-[var(--motion-fast)] hover:text-accent"
+                  className="transition-colors duration-(--motion-fast) hover:text-accent"
                 >
                   {link.label}
                 </a>
@@ -55,7 +55,8 @@ export const Footer = ({ data }: FooterProps) => {
               <a
                 href={social.href}
                 aria-label={social.label}
-                className="grid h-9 w-9 place-items-center rounded-full border border-[var(--site-border)] bg-[var(--site-control-bg)] text-[var(--site-page-muted)] transition-colors duration-[var(--motion-fast)] hover:border-accent hover:text-accent"
+                className="grid h-9 w-9 place-items-center rounded-full border border-(--site-border) bg-(--site-control-bg) text-(--site-page-muted) 
+                transition-colors duration-(--motion-fast) hover:border-accent hover:text-accent"
               >
                 {socialIcons[social.icon]}
               </a>
@@ -67,7 +68,7 @@ export const Footer = ({ data }: FooterProps) => {
           {data.contact.email ? (
             <a
               href={`mailto:${data.contact.email}`}
-              className="inline-flex items-center gap-3 transition-colors duration-[var(--motion-fast)] hover:text-accent"
+              className="inline-flex items-center gap-3 transition-colors duration-(--motion-fast) hover:text-accent"
             >
               <Mail aria-hidden="true" className="h-4 w-4" />
               <span>{data.contact.email}</span>
@@ -77,7 +78,7 @@ export const Footer = ({ data }: FooterProps) => {
           {data.contact.phone ? (
             <a
               href={`tel:${data.contact.phone.replace(/[\s()-]/g, "")}`}
-              className="inline-flex items-center gap-3 transition-colors duration-[var(--motion-fast)] hover:text-accent"
+              className="inline-flex items-center gap-3 transition-colors duration-(--motion-fast) hover:text-accent"
             >
               <Phone aria-hidden="true" className="h-4 w-4" />
               <span>{data.contact.phone}</span>
@@ -85,7 +86,7 @@ export const Footer = ({ data }: FooterProps) => {
           ) : null}
         </address>
 
-        <div className="mt-10 w-full max-w-xl border-t border-[var(--site-border)] pt-5">
+        <div className="mt-10 w-full max-w-xl border-t border-(--site-border) pt-5">
           <p className="text-[11px] font-semibold leading-6">{data.credit1}</p>
           <p className="text-[11px] font-semibold leading-6">{data.credit2}</p>
         </div>

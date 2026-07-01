@@ -41,10 +41,10 @@ export const Portfolio = ({ intro, projects }: PortfolioProps) => {
         }}
         className="mx-auto max-w-3xl text-center"
       >
-        <h2 className="text-2xl font-bold text-[var(--site-page-text)]">
+        <h2 className="text-2xl font-bold text-(--site-page-text)">
           {intro.title}
         </h2>
-        <p className="mt-4 text-sm leading-6 text-[var(--site-page-muted)]">
+        <p className="mt-4 text-sm leading-6 text-(--site-page-muted)">
           {intro.subtitle}
         </p>
       </motion.div>

@@ -39,9 +39,9 @@ export const Hero = ({ data, theme }: HeroProps) => {
   return (
     <section
       id="home"
-      className="relative isolate grid w-full items-center gap-12 overflow-hidden px-6 pb-12 pt-10 sm:px-10 md:grid-cols-[0.92fr_1.08fr] lg:min-h-[620px] lg:px-16 lg:pb-16 lg:pt-8 xl:px-20"
+      className="relative isolate grid w-full items-center gap-12 overflow-hidden px-6 pb-12 pt-10 sm:px-10 md:grid-cols-[0.92fr_1.08fr] lg:min-h-155 lg:px-16 lg:pb-16 lg:pt-8 xl:px-20"
     >
-      <div className="pointer-events-none absolute inset-0 -z-20 opacity-[var(--site-hero-canvas-opacity)]">
+      <div className="pointer-events-none absolute inset-0 -z-20 opacity-(--site-hero-canvas-opacity)">
         <Balatro
           key={theme}
           color1="var(--site-hero-canvas-primary)"
@@ -56,7 +56,7 @@ export const Hero = ({ data, theme }: HeroProps) => {
           mouseInteraction={false}
         />
       </div>
-      <div className="pointer-events-none absolute inset-0 -z-10 bg-[var(--site-hero-overlay)]" />
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-(--site-hero-overlay)" />
 
       <motion.div
         initial={{ opacity: 0, y: 18 }}
@@ -66,10 +66,10 @@ export const Hero = ({ data, theme }: HeroProps) => {
         }}
         className="relative z-10"
       >
-        <p className="text-base font-semibold leading-7 text-[var(--site-page-muted)]">
+        <p className="text-base font-semibold leading-7 text-(--site-page-muted)">
           {data.eyebrow}
           <br />
-          <span className="text-[var(--site-page-subtle)]">{data.name}</span>
+          <span className="text-(--site-page-subtle)">{data.name}</span>
         </p>
 
         <h1 className="mt-5 text-5xl font-extrabold leading-none tracking-normal text-accent sm:text-6xl lg:text-7xl">
@@ -83,7 +83,8 @@ export const Hero = ({ data, theme }: HeroProps) => {
                 key={social.label}
                 href={social.href}
                 aria-label={social.label}
-                className="grid h-7 w-7 place-items-center rounded-full border border-[var(--site-border)] bg-[var(--site-control-muted-bg)] text-[var(--site-page-muted)] transition-colors duration-[var(--motion-fast)] hover:border-accent hover:text-accent"
+                className="grid h-7 w-7 place-items-center rounded-full border border-(--site-border) 
+                bg-(--site-control-muted-bg) text-(--site-page-muted) transition-colors duration-(--motion-fast) hover:border-accent hover:text-accent"
               >
                 <span className="text-xs font-bold leading-none">
                   {socialLabels[social.icon]}
@@ -100,8 +101,8 @@ export const Hero = ({ data, theme }: HeroProps) => {
               href={action.href}
               className={
                 action.variant === "primary"
-                  ? "rounded-md bg-accent px-8 py-3 text-sm font-semibold text-[var(--site-page-inverse)] transition-colors duration-[var(--motion-fast)] hover:bg-accent-hover"
-                  : "rounded-md border border-[var(--site-border)] px-8 py-3 text-sm font-semibold text-[var(--site-page-subtle)] transition-colors duration-[var(--motion-fast)] hover:border-accent hover:text-accent"
+                  ? "rounded-md bg-accent px-8 py-3 text-sm font-semibold text-(--site-page-inverse) transition-colors duration-(--motion-fast) hover:bg-accent-hover"
+                  : "rounded-md border border-(--site-border) px-8 py-3 text-sm font-semibold text-(--site-page-subtle) transition-colors duration-(--motion-fast) hover:border-accent hover:text-accent"
               }
             >
               {action.label}
@@ -109,16 +110,16 @@ export const Hero = ({ data, theme }: HeroProps) => {
           ))}
         </div>
 
-        <div className="mt-12 inline-grid grid-cols-3 rounded-md bg-[var(--site-stats-bg)] shadow-sm ring-1 ring-[var(--site-stats-ring)]">
+        <div className="mt-12 inline-grid grid-cols-3 rounded-md bg-(--site-stats-bg) shadow-sm ring-1 ring-(--site-stats-ring)">
           {data.stats.map((stat, index) => (
             <div
               key={stat.label}
               className={`px-5 py-5 sm:px-6 ${
-                index > 0 ? "border-l border-[var(--site-stats-border)]" : ""
+                index > 0 ? "border-l border-(--site-stats-border)" : ""
               }`}
             >
               <p className="text-lg font-extrabold text-accent">{stat.value}</p>
-              <p className="mt-1 whitespace-nowrap text-xs font-semibold text-[var(--site-page-subtle)] sm:text-sm">
+              <p className="mt-1 whitespace-nowrap text-xs font-semibold text-(--site-page-subtle) sm:text-sm">
                 {stat.label}
               </p>
             </div>
@@ -133,13 +134,13 @@ export const Hero = ({ data, theme }: HeroProps) => {
           duration: getMotionValue("--motion-hero-media-duration", 0.6),
           delay: getMotionValue("--motion-hero-media-delay", 0.1),
         }}
-        className="relative mx-auto flex aspect-square w-full max-w-[470px] items-end justify-center"
+        className="relative mx-auto flex aspect-square w-full max-w-117.5 items-end justify-center"
       >
-        <div className="absolute bottom-3 left-1/2 h-[78%] w-[78%] -translate-x-1/2 rounded-[240px] bg-[var(--site-hero-portrait-bg)]" />
+        <div className="absolute bottom-3 left-1/2 h-[78%] w-[78%] -translate-x-1/2 rounded-[240px] bg-(--site-hero-portrait-bg)" />
         <img
           src={data.image.src}
           alt={data.image.alt}
-          className="relative z-10 mb-4 max-h-[435px] w-[82%] rounded-[244px] object-contain grayscale "
+          className="relative z-10 mb-4 max-h-108.75 w-[82%] rounded-[244px] object-contain grayscale "
         />
       </motion.div>
     </section>

@@ -51,11 +51,11 @@ export const Contact = ({ data }: ContactProps) => {
       >
         <h2
           id="contact-title"
-          className="text-2xl font-bold text-[var(--site-page-text)]"
+          className="text-2xl font-bold text-(--site-page-text)"
         >
           {data.title}
         </h2>
-        <p className="mt-4 text-sm leading-6 text-[var(--site-page-muted)]">
+        <p className="mt-4 text-sm leading-6 text-(--site-page-muted)">
           {data.subtitle}
         </p>
       </motion.div>
@@ -72,13 +72,13 @@ export const Contact = ({ data }: ContactProps) => {
       >
         {state.succeeded ? (
           <div
-            className="mx-auto max-w-xl rounded-md border border-[var(--site-border)] bg-[var(--site-contact-control-bg)] px-6 py-8 text-center"
+            className="mx-auto max-w-xl rounded-md border border-(--site-border) bg-(--site-contact-control-bg) px-6 py-8 text-center"
             role="status"
           >
-            <h3 className="text-lg font-semibold text-[var(--site-page-text)]">
+            <h3 className="text-lg font-semibold text-(--site-page-text)">
               Thanks for reaching out.
             </h3>
-            <p className="mt-3 text-sm leading-6 text-[var(--site-page-muted)]">
+            <p className="mt-3 text-sm leading-6 text-(--site-page-muted)">
               Your message is on its way. I will get back to you soon.
             </p>
           </div>
@@ -227,7 +227,7 @@ export const Contact = ({ data }: ContactProps) => {
               <button
                 type="submit"
                 disabled={state.submitting}
-                className="inline-flex h-11 min-w-28 items-center justify-center gap-2 rounded-md border border-[var(--site-page-muted)] px-6 text-sm font-semibold text-[var(--site-page-text)] transition-colors duration-[var(--motion-fast)] hover:border-accent hover:bg-accent hover:text-[var(--site-page-inverse)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent disabled:cursor-not-allowed disabled:opacity-60"
+                className="inline-flex h-11 min-w-28 items-center justify-center gap-2 rounded-md border border-(--site-page-muted) px-6 text-sm font-semibold text-(--site-page-text) transition-colors duration-(--motion-fast) hover:border-accent hover:bg-accent hover:text-(--site-page-inverse) focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent disabled:cursor-not-allowed disabled:opacity-60"
               >
                 <Send aria-hidden="true" className="h-4 w-4" />
                 {state.submitting ? "Sending" : "Send"}
