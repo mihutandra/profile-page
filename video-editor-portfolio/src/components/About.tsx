@@ -49,10 +49,10 @@ export const About = ({ data }: AboutProps) => {
         }}
         className="mx-auto max-w-3xl text-center"
       >
-        <h2 className="text-2xl font-bold text-[var(--site-page-text)]">
+        <h2 className="text-2xl font-bold text-(--site-page-text)">
           {data.title}
         </h2>
-        <p className="mt-4 text-sm leading-6 text-[var(--site-page-muted)]">
+        <p className="mt-4 text-sm leading-6 text-(--site-page-muted)">
           {data.subtitle}
         </p>
       </motion.div>
@@ -65,13 +65,13 @@ export const About = ({ data }: AboutProps) => {
             duration: getMotionValue("--motion-hero-media-duration", 0.6),
             delay: getMotionValue("--motion-hero-media-delay", 0.1),
           }}
-          className="relative mx-auto flex aspect-square w-full max-w-[470px] items-end justify-center"
+          className="relative mx-auto flex aspect-square w-full max-w-117.5 items-end justify-center"
         >
-          <div className="absolute bottom-3 left-1/2 h-[78%] w-[78%] -translate-x-1/2 rounded-[240px] bg-[var(--site-hero-portrait-bg)]" />
+          <div className="absolute bottom-3 left-1/2 h-[78%] w-[78%] -translate-x-1/2 rounded-[240px] bg-(--site-hero-portrait-bg)" />
           <img
             src={data.image.src}
             alt={data.image.alt}
-            className="relative z-10 mb-4 max-h-[435px] w-[82%] rounded-[244px] object-contain grayscale"
+            className="relative z-10 mb-4 max-h-108.75 w-[82%] rounded-[244px] object-contain grayscale"
           />
         </motion.div>
 
@@ -85,14 +85,14 @@ export const About = ({ data }: AboutProps) => {
           }}
           className="mx-auto max-w-2xl lg:mx-0"
         >
-          <p className="text-sm leading-8 text-[var(--site-page-subtle)] sm:text-base">
+          <p className="text-sm leading-8 text-(--site-page-subtle) sm:text-base">
             {data.description}
           </p>
 
           <a
             href={data.cvHref}
             download
-            className="mt-8 inline-flex items-center gap-2 rounded-md bg-accent px-7 py-3 text-sm font-semibold text-[var(--site-page-inverse)] transition-colors duration-[var(--motion-fast)] hover:bg-accent-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
+            className="mt-8 inline-flex items-center gap-2 rounded-md bg-accent px-7 py-3 text-sm font-semibold text-(--site-page-inverse) transition-colors duration-(--motion-fast) hover:bg-accent-hover focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
           >
             <Download aria-hidden="true" className="h-4 w-4" />
             {data.cvLabel}

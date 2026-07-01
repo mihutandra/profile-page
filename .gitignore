@@ -38,3 +38,4 @@ next-env.d.ts
 # local portfolio content
 video-editor-portfolio/src/assets/data.json
 !video-editor-portfolio/src/assets/data.example.json
+video-editor-portfolio/public/

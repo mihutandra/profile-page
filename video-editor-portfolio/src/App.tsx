@@ -1,12 +1,12 @@
 import { useEffect, useMemo, useState } from "react";
 import siteData from "./assets/data.json";
-import { About } from "./components/About";
-import { Contact } from "./components/Contact";
-import { Footer } from "./components/Footer";
-import { Hero } from "./components/Hero";
-import { Navbar } from "./components/Navbar";
-import { Portfolio } from "./components/Portfolio";
-import { Services } from "./components/Services";
+import { About } from "@/components";
+import { Contact } from "@/components";
+import { Footer } from "@/components";
+import { Hero } from "@/components";
+import { Navbar } from "@/components";
+import { Portfolio } from "@/components";
+import { Services } from "@/components";
 
 export type NavItem = {
   label: string;
@@ -137,7 +137,7 @@ function App() {
   }, [theme]);
 
   return (
-    <main className="min-h-screen bg-[var(--site-page-bg)] text-[var(--site-page-text)] transition-colors duration-[var(--motion-medium)]">
+    <main className="min-h-screen bg-(--site-page-bg) text-(--site-page-text) transition-colors duration-(--motion-medium)">
       <div className="min-h-screen w-full overflow-hidden">
         <Navbar
           data={data.navbar}
