@@ -29,7 +29,7 @@
   "hero": {
     "eyebrow": "Hello, I am",
     "name": "Your Name",
-    "title": "Video Editor",
+    "title": "Your Job",
     "socials": [
       {
         "label": "Instagram",
@@ -179,28 +179,28 @@
     },
     {
       "title": "Portfolio project 3",
-      "cover": "/portfolio/project-img-6.png",
+      "cover": "/portfolio/project-img-4.png",
       "href": "https://drive.google.com/",
       "borderColor": "#14b8a6",
       "gradient": "linear-gradient(195deg, #14b8a6, #111111)"
     },
     {
       "title": "Portfolio project 4",
-      "cover": "/portfolio/project-img-4.png",
+      "cover": "/portfolio/project-img-5.png",
       "href": "https://drive.google.com/",
       "borderColor": "#eab308",
       "gradient": "linear-gradient(210deg, #eab308, #111111)"
     },
     {
       "title": "Portfolio project 5",
-      "cover": "/portfolio/project-img-5.png",
+      "cover": "/portfolio/project-img-4.png",
       "href": "https://drive.google.com/",
       "borderColor": "#ef4444",
       "gradient": "linear-gradient(225deg, #ef4444, #111111)"
     },
     {
       "title": "Portfolio project 6",
-      "cover": "/portfolio/project-img-6.png",
+      "cover": "/portfolio/project-img-5.png",
       "href": "https://drive.google.com/",
       "borderColor": "#8b5cf6",
       "gradient": "linear-gradient(135deg, #8b5cf6, #111111)"
