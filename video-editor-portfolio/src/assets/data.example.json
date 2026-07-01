@@ -2,7 +2,7 @@
   "navbar": {
     "logoLight": "/logo-light.png",
     "logoDark": "/logo-dark.png",
-    "logoAlt": "Christian Bergmann logo",
+    "logoAlt": "logo",
     "links": [
       {
         "label": "Home",
